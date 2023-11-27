@@ -1,0 +1,19 @@
+// Define the analog pin for the potentiometer
+int potPin = A0;
+
+void setup() {
+  Serial.begin(9600); // Initialize serial communication for debugging
+}
+
+void loop() {
+  // Read the analog value from the potentiometer
+  int potValue = analogRead(potPin);
+
+  // Map the analog value to a range between 0 and 255
+  int brightness = map(potValue, 0, 1023, 0, 255);
+
+  // Print the mapped brightness value to the Serial Monitor
+  Serial.println(brightness);
+
+  delay(100); // Wait for 100 milliseconds before the next reading
+}

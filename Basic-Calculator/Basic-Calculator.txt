@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Declare variables to store user input
+    double num1, num2;
+
+    // Display menu to the user
+    cout << "Simple Calculator Menu:" << endl;
+    cout << "1. Addition" << endl;
+    cout << "2. Subtraction" << endl;
+    cout << "3. Multiplication" << endl;
+    cout << "4. Division" << endl;
+
+    // Prompt the user to choose an operation
+    cout << "Enter the number corresponding to the operation you want to perform: ";
+    int choice;
+    cin >> choice;
+
+    // Prompt the user to enter two numbers
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    // Perform the selected operation and display the result
+    switch (choice) {
+        case 1:
+            // Addition
+            cout << "Result: " << num1 + num2 << endl;
+            break;
+        case 2:
+            // Subtraction
+            cout << "Result: " << num1 - num2 << endl;
+            break;
+        case 3:
+            // Multiplication
+            cout << "Result: " << num1 * num2 << endl;
+            break;
+        case 4:
+            // Division with a check for division by zero
+            if (num2 != 0) {
+                cout << "Result: " << num1 / num2 << endl;
+            } else {
+                cout << "Error: Division by zero is not allowed." << endl;
+            }
+            break;
+        default:
+            // Handling invalid choices
+            cout << "Invalid choice. Please enter a number between 1 and 4." << endl;
+    }
+
+    return 0;
+}

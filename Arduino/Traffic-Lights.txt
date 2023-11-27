@@ -1,0 +1,36 @@
+// Traffic Light System for Arduino
+
+// Define the pins for the traffic light LEDs
+int redLED = 2;
+int yellowLED = 3;
+int greenLED = 4;
+
+void setup() {
+  // Set the LED pins as outputs
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+}
+
+void loop() {
+  // Red light (Stop)
+  digitalWrite(redLED, HIGH);    // Turn on the red LED
+  digitalWrite(yellowLED, LOW);  // Turn off the yellow LED
+  digitalWrite(greenLED, LOW);   // Turn off the green LED
+  delay(5000); // Wait for 5 seconds
+
+  // Yellow light (Prepare to go)
+  digitalWrite(redLED, LOW);     // Turn off the red LED
+  digitalWrite(yellowLED, HIGH); // Turn on the yellow LED
+  delay(2000); // Wait for 2 seconds
+
+  // Green light (Go)
+  digitalWrite(yellowLED, LOW);  // Turn off the yellow LED
+  digitalWrite(greenLED, HIGH);  // Turn on the green LED
+  delay(5000); // Wait for 5 seconds
+
+  // Yellow light (Prepare to stop)
+  digitalWrite(greenLED, LOW);   // Turn off the green LED
+  digitalWrite(yellowLED, HIGH); // Turn on the yellow LED
+  delay(2000); // Wait for 2 seconds
+}
